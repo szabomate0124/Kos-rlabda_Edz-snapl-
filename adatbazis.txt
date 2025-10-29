@@ -1,0 +1,17 @@
+DROP TABLE IF EXISTS `edzesek`;
+
+CREATE TABLE `edzesek` (
+`id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+`jatekos_nev` VARCHAR(255) NOT NULL,
+`datum` DATE NOT NULL,
+`ido_tartam` INT NOT NULL,
+`gyakorlatok` TEXT NOT NULL,
+`megjegyzes` TEXT NULL,
+`letrehozva` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+`frissitve` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `edzesek` (`jatekos_nev`, `datum`, `ido_tartam`, `gyakorlatok`, `megjegyzes`) VALUES
+('Kiss Béla', '2025-10-29', 90, '[{"nev": "Kosárdobás", "ismetel": 50, "sorozat": 3}, {"nev": "Sprint", "tavolsag_m": 100, "sorozat": 5}, {"nev": "Labdaérzék", "ismetel": 15, "sorozat": 4}]', 'Fókusz a kosárdobáson'),
+('Kovács Péter', '2025-10-28', 75, '[{"nev": "Kosárdobás", "ismetel": 40, "sorozat": 3}, {"nev": "Sprint", "tavolsag_m": 80, "sorozat": 4}, {"nev": "Labdaérzék", "ismetel": 20, "sorozat": 3}]', 'Állóképesség fejlesztés');
